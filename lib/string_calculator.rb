@@ -1,13 +1,17 @@
 class StringCalculator
   def add(numbers)
     return 0 if numbers.empty?
-    if numbers.start_with?("//")
+    sanitized_numbers = if numbers.start_with?("//")
       delimiter = numbers[2]
       numbers = numbers[4..]
-      split_numbers(numbers, delimiter).sum
+      split_numbers(numbers, delimiter)
     else
-      split_numbers(numbers, ",").sum
+      split_numbers(numbers, ",")
     end
+    if sanitized_numbers.find { |n| n < 0 }
+      raise StandardError, "Negative numbers not allowed #{sanitized_numbers.find { |n| n < 0 }}"
+    end
+    sanitized_numbers.sum
   end
 
   private
