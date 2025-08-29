@@ -30,4 +30,10 @@ class TestStringCalculator < Minitest::Test
     result = @calculator.add("//;\n1;2")
     assert_equal 3, result
   end
+
+  def test_returns_for_negative_number_string
+    assert_raises(StandardError, "Negative numbers not allowed -1") do
+      @calculator.add("-1,2,5")
+    end
+  end
 end
