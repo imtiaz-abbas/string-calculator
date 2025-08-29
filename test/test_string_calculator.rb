@@ -6,5 +6,8 @@ class TestStringCalculator < Minitest::Test
     @calculator = StringCalculator.new
   end
 
-  # Test cases will be added later
+  def test_returns_zero_for_empty_string
+    result = @calculator.add("")
+    assert_equal 0, result
+  end
 end
