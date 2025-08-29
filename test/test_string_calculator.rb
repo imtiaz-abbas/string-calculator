@@ -25,4 +25,9 @@ class TestStringCalculator < Minitest::Test
     result = @calculator.add("1\n2,3")
     assert_equal 6, result
   end
+
+  def test_returns_for_numbers_string_with_delimiter
+    result = @calculator.add("//;\n1;2")
+    assert_equal 3, result
+  end
 end
