@@ -15,4 +15,9 @@ class TestStringCalculator < Minitest::Test
     result = @calculator.add("1")
     assert_equal 1, result
   end
+
+  def test_returns_for_comma_separated_number_string
+    result = @calculator.add("1,2,3")
+    assert_equal 6, result
+  end
 end
