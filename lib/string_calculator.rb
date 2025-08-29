@@ -9,7 +9,7 @@ class StringCalculator
       split_numbers(numbers, ",")
     end
     if sanitized_numbers.find { |n| n < 0 }
-      raise StandardError, "Negative numbers not allowed #{sanitized_numbers.find { |n| n < 0 }}"
+      raise StandardError, "Negative numbers not allowed #{sanitized_numbers.select { |n| n < 0 }.join(",")}"
     end
     sanitized_numbers.sum
   end
