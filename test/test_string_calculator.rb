@@ -32,8 +32,16 @@ class TestStringCalculator < Minitest::Test
   end
 
   def test_returns_for_negative_number_string
-    assert_raises(StandardError, "Negative numbers not allowed -1") do
+    exception = assert_raises(StandardError) do
       @calculator.add("-1,2,5")
     end
+    assert_equal "Negative numbers not allowed -1", exception.message
+  end
+
+  def test_returns_for_multiple_negative_number_string
+    exception = assert_raises(StandardError) do
+      @calculator.add("-1,2,5,-3,-6")
+    end
+    assert_equal "Negative numbers not allowed -1,-3,-6", exception.message
   end
 end
