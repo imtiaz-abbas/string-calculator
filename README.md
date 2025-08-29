@@ -1,5 +1,7 @@
 # String Calculator TDD Kata
 
+![Tests](https://github.com/imtiaz-abbas/string-calculator/workflows/Tests/badge.svg)
+
 This is an implementation of the String Calculator TDD in Ruby using Minitest.
 
 ## Getting Started
@@ -27,17 +29,23 @@ bundle install
 ruby test/test_string_calculator.rb
 ```
 
+## Test Results
+
+![Test Results](screenshots/test-results.png)
+
+*All tests passing - demonstrating successful TDD implementation with 7 test cases and 9 assertions*
+
 ## TDD Progress
 
 Following the TDD Red-Green-Refactor cycle for each requirement:
 
-- [ ] Empty string returns 0
-- [ ] Single number returns that number  
-- [ ] Two numbers return their sum
-- [ ] Handle any amount of numbers
-- [ ] Handle newlines between numbers
-- [ ] Support custom delimiters
-- [ ] Throw exception for negative numbers
+- [x] Empty string returns 0
+- [x] Single number returns that number  
+- [x] Two numbers return their sum
+- [x] Handle any amount of numbers
+- [x] Handle newlines between numbers
+- [x] Support custom delimiters
+- [x] Throw exception for negative numbers
 
 ## Project Structure
 
