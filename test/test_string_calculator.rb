@@ -20,4 +20,9 @@ class TestStringCalculator < Minitest::Test
     result = @calculator.add("1,2,3")
     assert_equal 6, result
   end
+
+  def test_returns_for_new_line_between_numbers_string
+    result = @calculator.add("1\n2,3")
+    assert_equal 6, result
+  end
 end
