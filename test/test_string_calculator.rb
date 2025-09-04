@@ -44,4 +44,8 @@ class TestStringCalculator < Minitest::Test
     end
     assert_equal "Negative numbers not allowed -1,-3,-6", exception.message
   end
+
+  def test_returns_result_for_complex_expression
+    assert_equal 9, @calculator.add("1+2,3*2")
+  end
 end
