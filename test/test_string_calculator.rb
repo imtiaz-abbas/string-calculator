@@ -48,4 +48,8 @@ class TestStringCalculator < Minitest::Test
   def test_returns_result_for_complex_expression
     assert_equal 9, @calculator.add("1+2,3*2")
   end
+
+  def test_returns_result_for_complex_expression
+    assert_equal 12, @calculator.add("1+2+3,3*2")
+  end
 end
